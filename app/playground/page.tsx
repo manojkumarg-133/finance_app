@@ -1,6 +1,4 @@
 import Trend from '@/components/trend'
-import PageHeader from '@/components/page-header'
-import TransactionItem from '@/components/transaction-item';
 import TransactionSummaryItem from '@/components/transaction-summary-item';
 import Button from '@/components/button';
 import Label from '@/components/label';
@@ -14,19 +12,9 @@ export const metadata = {
 }
 
 export default function Page() {
-  const handleRemoved = () => {
-    // Mock function for playground
-  }
-
   return (
     <main className="space-y-8 mb-44">
       <h1 className="text-4xl mt-8">Playground</h1>
-
-      <div>
-        <h2 className="mb-4 text-lg font-mono">PageHeader</h2>
-        <Separator />
-        <div><PageHeader /></div>
-      </div>
 
       <div>
         <h2 className="mb-4 text-lg font-mono">Trend</h2>
@@ -40,26 +28,12 @@ export default function Page() {
       </div>
 
       <div>
-        <h2 className="mb-4 text-lg font-mono">TransactionItem</h2>
-        <Separator />
-        <div className="space-y-4">
-          <TransactionItem id={1} type="Income" description="Salary" amount={2000} onRemoved={handleRemoved} />
-          <TransactionItem id={2} type="Expense" category="Food" description="Going out to eat" amount={29} onRemoved={handleRemoved} />
-          <TransactionItem id={3} type="Saving" description="For children" amount={500} onRemoved={handleRemoved} />
-          <TransactionItem id={4} type="Investment" description="In Microsoft" amount={9000} onRemoved={handleRemoved} />
-        </div>
-      </div>
-
-      <div>
-        <h2 className="mb-4 text-lg font-mono">TransactionSummaryItem + TransactionItem</h2>
+        <h2 className="mb-4 text-lg font-mono">TransactionSummaryItem</h2>
         <Separator />
         <div className="space-y-4">
           <TransactionSummaryItem date="2024-05-01" amount={3500} />
           <Separator />
-          <TransactionItem id={5} type="Income" description="Salary" amount={2000} onRemoved={handleRemoved} />
-          <TransactionItem id={6} type="Expense" category="Food" description="Going out to eat" amount={29} onRemoved={handleRemoved} />
-          <TransactionItem id={7} type="Saving" description="For children" amount={500} onRemoved={handleRemoved} />
-          <TransactionItem id={8} type="Investment" description="In Microsoft" amount={9000} onRemoved={handleRemoved} />
+          <TransactionSummaryItem date="2024-05-02" amount={1200} />
         </div>
       </div>
 
