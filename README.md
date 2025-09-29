@@ -4,7 +4,7 @@ A modern personal finance management application built with Next.js 14 and Supab
 
 ## 🚀 Live Demo
 
-**[View Live Application](https://finance-app-qbz6.vercel.app/)**
+**[View Live Application](https://finance-app-qbz6.vercel.app/)** {visit :https://finance-app-qbz6.vercel.app/dashboard (for the actual working model) }
 
 ## ✨ Features
 
