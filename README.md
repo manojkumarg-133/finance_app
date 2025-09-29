@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Finance App
 
-## Getting Started
+A modern personal finance management application built with Next.js 14 and Supabase.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**[View Live Application](https://finance-app-qbz6.vercel.app/)**
+
+## ✨ Features
+
+- **Authentication**: Secure email-based authentication with magic links
+- **Transaction Management**: Add, edit, and delete income/expense transactions
+- **Financial Insights**: View spending trends and financial summaries
+- **User Profiles**: Customizable user profiles with avatar uploads
+- **Responsive Design**: Optimized for desktop and mobile devices
+- **Dark Mode**: Toggle between light and dark themes
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
+- **Backend**: Supabase (Database, Authentication, Storage)
+- **Deployment**: Vercel
+- **UI Components**: Custom components with Lucide React icons
+
+## 🏃‍♂️ Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up your environment variables in `.env.local`
+4. Run the development server: `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000)
+
+## � Project Structure
+
+```
+app/
+├── (auth)/                 # Authentication routes
+│   ├── auth/
+│   │   ├── confirm/        # Email confirmation handler
+│   │   └── magiclink/      # Magic link handler
+│   └── login/              # Login page
+├── dashboard/              # Protected dashboard routes
+│   ├── settings/           # User settings & profile
+│   │   ├── avatar/         # Avatar upload
+│   │   └── profile/        # Profile management
+│   ├── transaction/        # Transaction management
+│   │   ├── add/            # Add new transaction
+│   │   └── [id]/edit/      # Edit existing transaction
+│   └── page.tsx            # Dashboard home
+├── playground/             # UI component showcase
+└── layout.tsx              # Root layout
+
+components/                 # Reusable UI components
+├── ui/                     # Basic UI elements (Button, Input, etc.)
+├── transaction-*.tsx       # Transaction-related components
+├── avatar.tsx              # User avatar component
+└── dark-mode-toggle.tsx    # Theme switcher
+
+lib/
+├── actions.ts              # Server actions for CRUD operations
+├── supabase/               # Supabase client configuration
+├── validation.ts           # Zod schemas for form validation
+└── utils.ts                # Utility functions
+
+hooks/                      # Custom React hooks
+├── use-format-currency.ts  # Currency formatting
+└── use-dark-mode.ts        # Dark mode management
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Key Implementation Details
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Server Actions**: Uses Next.js 14 server actions for secure database operations
+- **Row Level Security**: Implements Supabase RLS policies for data protection
+- **Real-time Updates**: Automatic UI updates after data mutations
+- **Form Validation**: Zod schemas for type-safe form handling
+- **Image Upload**: Supabase Storage integration for avatar uploads
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## �📱 Pages
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `/login` - Authentication
+- `/dashboard` - Main dashboard with financial overview
+- `/dashboard/transaction/add` - Add new transactions
+- `/dashboard/settings` - User profile and settings
+- `/playground` - UI component showcase
